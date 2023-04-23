@@ -1,0 +1,17 @@
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\bin\Debug\net6.0\HoltinData.deps.json
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\bin\Debug\net6.0\HoltinData.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\bin\Debug\net6.0\HoltinData.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\HoltinData.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\HoltinData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\HoltinData.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\HoltinData.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\HoltinData.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\HoltinData.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\refint\HoltinData.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\HoltinData.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\ref\HoltinData.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\bin\Debug\net6.0\HoltinModels.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\bin\Debug\net6.0\HoltinRepositories.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\bin\Debug\net6.0\HoltinRepositories.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\bin\Debug\net6.0\HoltinModels.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinData\obj\Debug\net6.0\HoltinData.csproj.CopyComplete

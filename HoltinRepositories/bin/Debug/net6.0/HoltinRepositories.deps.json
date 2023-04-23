@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "HoltinRepositories/1.0.0": {
+        "dependencies": {
+          "HoltinModels": "1.0.0"
+        },
+        "runtime": {
+          "HoltinRepositories.dll": {}
+        }
+      },
+      "HoltinModels/1.0.0": {
+        "runtime": {
+          "HoltinModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HoltinRepositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HoltinModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ggWZpumKfT+1Btgi0vPIdxlOGekCNURgzG+41qFc5LxH6vwzqXaf7hRlJim7H8cZgbrMJv8ss/ki/SWXGDmqNQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyPersistence\\HoltinCompanyPersistence.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\HoltinModels.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\HoltinModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\HoltinModels.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\HoltinModels.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\HoltinModels.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\bin\Debug\net6.0\HoltinModels.deps.json
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\bin\Debug\net6.0\HoltinModels.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\bin\Debug\net6.0\HoltinModels.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\HoltinModels.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\refint\HoltinModels.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\HoltinModels.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinModels\obj\Debug\net6.0\ref\HoltinModels.dll
