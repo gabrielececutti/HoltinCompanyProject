@@ -8,16 +8,16 @@ namespace HoltinModels.Entities
 {
     public class Room
     {
-        public int ID { get; init; }
+        public int Id { get; init; }
         public int HotelId { get; init; }
-        public int Number { get; init; }
-        public bool Booked { get; init; }
-        public int SingleBeds { get; init; }
-        public int DoubleBeds { get; init; }
-        public bool WiFi { get; init; }
-        public bool RoomService { get; init; }
-        public bool AirConditioning { get; init; }
-        public bool Tv { get; init; }
-        public decimal NightPrice { get; init; }
+        public int Number { get; set; }
+        public bool Booked { get; set; }
+        public int SingleBeds { get; set; }
+        public int DoubleBeds { get; set; }
+        public bool WiFi { get; set; }
+        public bool RoomService { get; set; }
+        public bool AirConditioning { get; set; }
+        public bool Tv { get; set; }
+        public decimal NightPrice { get; set; }
     }
 }

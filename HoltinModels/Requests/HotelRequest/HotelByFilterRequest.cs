@@ -8,7 +8,7 @@ namespace HoltinModels.Requests.HotelRequest
 {
     public class HotelByFilterRequest
     {
-        public string City { get; set; }
-        public string Name { get; set; }
+        public string? City { get; set; }
+        public string? Name { get; set; }
     }
 }

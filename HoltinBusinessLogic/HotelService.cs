@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace HoltinBusinessLogic
 {
-    // pesco i risultati delle query dalle repository
     public class HotelService : IHotelService
     {
         private readonly IHotelRepository _hotelRepository;
@@ -28,7 +27,22 @@ namespace HoltinBusinessLogic
 
         public DefaultResponse<List<Hotel>> GetHotelByFilter(HotelByFilterRequest request)
         {
-            throw new NotImplementedException();
+            return _hotelRepository.GetHotelsByFilter(request);
+        }
+
+        public bool Insert(Hotel hotel)
+        {
+            return _hotelRepository.Insert(hotel);
+        }
+
+        public bool Update(Hotel hotel)
+        {
+            return _hotelRepository.Update(hotel);
+        }
+
+        public bool Delete(HotelByIdRequest id)
+        {
+            return _hotelRepository.Delete(id);
         }
     }
 }

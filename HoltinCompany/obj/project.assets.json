@@ -40,7 +40,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Bogus >= 34.0.2"
+      "Bogus >= 34.0.2",
+      "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj"
     ]
   },
   "packageFolders": {
@@ -74,7 +75,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj": {
+              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -111,5 +116,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

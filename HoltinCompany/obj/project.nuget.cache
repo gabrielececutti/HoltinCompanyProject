@@ -1,10 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "N8nX9PP3+FkXyMNTmZrJiVMjziv5+c5If869YF2a+X8UcWiUcwgLuX0sl56suze35CPCEIegPdcVzhr0S0PqwQ==",
-  "success": true,
+  "dgSpecHash": "McHKSgj3LfibvJFgA7210UAIQfU6Nk7HH6Inw5fmtobJE4nkoJGcrbmmlbxPNV7HCCKqCaolDrY/shO+2/6kEA==",
+  "success": false,
   "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompany\\HoltinCompany.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabri\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -8,14 +8,15 @@ namespace HoltinModels.Requests.RoomRequest
 {
     public class RoomByFilterRequest
     {
-        int Guests { get; set; }
-        int SingleBeds { get; set; }
-        int DoubleBeds { get; set; }
-        bool WiFi { get; set; }
-        bool RoomService { get; set; }
-        bool AirConditioning { get; set; }
-        bool Tv { get; set; }
-        decimal NigthPriceMax { get; set; }
-        decimal NigthPriceMin { get;set; }
+        public int HotelId { get; set; }
+        public int Guests { get; set; }
+        public int SingleBeds { get; set; }
+        public int DoubleBeds { get; set; }
+        public bool WiFi { get; set; }
+        public bool RoomService { get; set; }
+        public bool AirConditioning { get; set; }
+        public bool Tv { get; set; }
+        public decimal NigthPriceMax { get; set; }
+        public decimal NigthPriceMin { get;set; }
     }
 }

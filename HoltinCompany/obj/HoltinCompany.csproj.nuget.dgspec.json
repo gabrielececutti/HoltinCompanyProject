@@ -31,7 +31,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj": {
+                "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

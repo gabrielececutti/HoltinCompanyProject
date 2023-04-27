@@ -1,3 +1,5 @@
+create database HoltinCompany
+go
 use HoltinCompany 
 go
 
@@ -84,18 +86,17 @@ values
    ('Edition', 'Melbourne'),
    ('Anantara', 'Montreal')
 
-
+-- FILL TABLE ROOM
 DECLARE @hotelCount int = (SELECT COUNT(*) FROM Hotel)
 DECLARE @i int = 1
 
--- FILL TABLE ROOM
 WHILE @i <= 3000
 BEGIN
     DECLARE @hotelId INT = CAST(RAND() * @hotelCount + 1 AS INT)
     DECLARE @number INT = CAST(RAND() * 100 + 1 AS INT)
     DECLARE @booked BIT = ROUND(RAND(), 0)
-    DECLARE @singleBeds BIT = CAST(RAND() * 3 + 1 AS INT)
-    DECLARE @doubleBeds INT = CAST(RAND() * 2 AS INT)
+    DECLARE @singleBeds INT = ROUND(RAND() * 3, 0)
+    DECLARE @doubleBeds INT = ROUND(RAND() * 2, 0);
 	DECLARE @wifi BIT = ROUND(RAND(), 0)
 	DECLARE @roomService BIT = ROUND(RAND(), 0)
 	DECLARE @airConditioning BIT = ROUND(RAND(), 0)
@@ -154,4 +155,3 @@ values
 (30, 25);
 
 
-select Id, Name, City from Hotel where Id = 1
