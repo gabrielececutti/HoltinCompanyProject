@@ -24,7 +24,7 @@ namespace HoltinData.Repositories
             var response = GetHotels(query, parameter);
             return new DefaultResponse<Hotel>()
             {
-                Data = response.Data.First(),
+                Data = response.Data.FirstOrDefault(),
                 Errors = response.Errors
             };
         }
@@ -44,7 +44,7 @@ namespace HoltinData.Repositories
             };
         }
 
-        public bool Insert(Hotel hotel)
+        public DefaultResponse<bool> Insert(Hotel hotel)
         {
             var query = @$"INSERT INTO Hotel (Name, City)
                           VALUES 
@@ -55,11 +55,14 @@ namespace HoltinData.Repositories
                 {"@city", hotel.City}
             };
             var response = ExecuteQuery(query, parameters);
-            if (response.Errors != null || response.Data==0) { return false; }
-            return false;
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
-        public bool Update(Hotel hotel)
+        public DefaultResponse<bool> Update(Hotel hotel)
         {
             var query = @"UPDATE Hotel 
                           SET
@@ -73,17 +76,23 @@ namespace HoltinData.Repositories
                 {"@city", hotel.City }
             };
             var response = ExecuteQuery(query, parameters);
-            if (response.Errors != null || response.Data==0) { return false; }
-            return true;
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
-        public bool Delete(HotelByIdRequest id)
+        public DefaultResponse<bool> Delete(HotelByIdRequest id)
         {
             var query = "DELETE FROM Hotel WHERE Id = @id";
             var parameter = new Dictionary<string, object>() { { "@id", id.Id } };
             var response = ExecuteQuery(query, parameter);
-            if (response.Errors != null || response.Data== 0) { return false; }
-            return true;
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
         private DefaultResponse<List<Hotel>> GetHotels(string query, Dictionary<string, object> parameters)
@@ -110,10 +119,10 @@ namespace HoltinData.Repositories
                 }
                 result.Data = hotels;
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                var error = ex.Message;
-                result.Errors = new string[] { error };
+                result.Errors = new string[] { ex.Message };
+                result.Data = new List<Hotel>();
             }
             return result;
         }
@@ -129,7 +138,7 @@ namespace HoltinData.Repositories
                 var sqlParameters = parameters.Select(x => new SqlParameter(x.Key, x.Value)).ToArray();
                 command.Parameters.AddRange(sqlParameters);
                 response.Data = command.ExecuteNonQuery();
-            } catch(SqlException ex)
+            } catch(Exception ex)
             {
                 response.Errors = new string[] { ex.Message };
             }

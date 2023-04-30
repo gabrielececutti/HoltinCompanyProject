@@ -14,7 +14,7 @@ namespace HoltinServices
     {
         public DefaultResponse<Reservation> GetReservationById(ReservationByIdRequest request);
         public DefaultResponse<List<Reservation>> GetReservationByFilter(ReservationByFilterRequest request);
-        public bool Insert(Reservation reservation);
-        public bool Delete(ReservationByIdRequest id);
+        public DefaultResponse<bool> Insert(Reservation reservation);
+        public DefaultResponse<bool> Delete(ReservationByIdRequest id);
     }
 }

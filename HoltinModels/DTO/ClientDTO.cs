@@ -9,9 +9,14 @@ namespace HoltinModels.DTO
 {
     public class ClientDTO
     {
+        public int Id { get; } 
         public string Name { get; }
         public string Surname { get; }
-        public string MobilePhoneNumber { get; }
+        public DateTime BirthDate { get; }
+        public string TaxidCode { get; }
+        public string PhoneNumber { get; }
+        public string Email { get; }
+        public bool Fidelity { get; set; }
         public List<Reservation> Reservations { get; set; }
     }
 }

@@ -41,7 +41,7 @@ Fidelity bit default 0,
 )
 
 create table Reservation(
-Id int identity (1,1) primary key not null,
+Id int primary key not null,
 HotelId int not null foreign key references Hotel (Id), 
 RoomId int not null foreign key references Room (Id),
 RoomNumber int not null,
@@ -154,4 +154,6 @@ values
 (29, 40),
 (30, 25);
 
-
+select * from Hotel
+select * from Room where Room.HotelId = 1
+select * from Client

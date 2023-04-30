@@ -8,8 +8,8 @@ namespace HoltinServices
     {
         public DefaultResponse<Hotel> GetHotelById (HotelByIdRequest request);
         public DefaultResponse<List<Hotel>> GetHotelByFilter(HotelByFilterRequest request);
-        public bool Insert (Hotel hotel);
-        public bool Update (Hotel hotel);
-        public bool Delete (HotelByIdRequest id);
+        public DefaultResponse<bool> Insert (Hotel hotel);
+        public DefaultResponse<bool> Update (Hotel hotel);
+        public DefaultResponse<bool> Delete (HotelByIdRequest id);
     }
 }

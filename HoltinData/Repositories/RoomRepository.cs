@@ -24,7 +24,7 @@ namespace HoltinData.Repositories
             var result = GetRooms(query, parameter);
             return new DefaultResponse<Room>
             {
-                Data = result.Data.First(),
+                Data = result.Data.FirstOrDefault(),
                 Errors = result.Errors
             };
         }
@@ -52,7 +52,7 @@ namespace HoltinData.Repositories
             };
         }
 
-        public bool Insert(Room room)
+        public DefaultResponse<bool> Insert(Room room)
         {
             var query = @"INSERT INTO Room  (HotelId, Number, Booked, SingleBeds, DoubleBeds, WiFi, RoomService, AirConditioning, TV, NightPrice)
                           VALUES
@@ -70,12 +70,15 @@ namespace HoltinData.Repositories
                 {"@tv", room.Tv},
                 {"@nightPrice", room.NightPrice}
             };
-            var result = ExecuteQuery(query, parameters);
-            if (result.Errors != null || result.Data == 0) return false;
-            return true;
+            var response = ExecuteQuery(query, parameters);
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
-        public bool Update(Room room)
+        public DefaultResponse<bool> Update(Room room)
         {
             var query = @"UPDATE Room
                           SET
@@ -105,18 +108,24 @@ namespace HoltinData.Repositories
                 {"@tv", room.Tv},
                 {"@nightPrice", room.NightPrice}
             };
-            var result = ExecuteQuery(query, parameters);
-            if (result.Errors != null || result.Data ==0) return false;
-            return true;
+            var response = ExecuteQuery(query, parameters);
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
-        public bool Delete(RoomByIdRequest id)
+        public DefaultResponse<bool> Delete(RoomByIdRequest id)
         {
             var query = "DELETE FROM Room WHERE Id = @id";
             var parameter = new Dictionary<string, object> { { "@id", id.Id } };
-            var result = ExecuteQuery(query, parameter);
-            if (result.Errors != null || result.Data == 0) return false;
-            return true;
+            var response = ExecuteQuery(query, parameter);
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
         private DefaultResponse<List<Room>> GetRooms (string query, Dictionary<string, object> parameters)
@@ -150,9 +159,10 @@ namespace HoltinData.Repositories
                     rooms.Add(room);
                 }
                 result.Data = rooms;
-            }catch (SqlException ex)
+            }catch (Exception ex)
             {
                 result.Errors = new string[] { ex.Message };
+                result.Data = new List<Room>();
             }
             return result;
         }
@@ -169,8 +179,8 @@ namespace HoltinData.Repositories
                 command.Parameters.AddRange(sqlParameters);
                 response.Data = command.ExecuteNonQuery();
 
-            }catch (SqlException ex)
-            {
+            }catch (Exception ex)
+            { 
                 response.Errors = new string[] { ex.Message }; 
             }
             return response;

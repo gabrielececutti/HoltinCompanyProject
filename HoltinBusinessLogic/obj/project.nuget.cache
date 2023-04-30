@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BHy8A9ipmZY19/VkazkuNkqxkmgB/yFV824F7cQxzqtFn1c0YSweI7i1YEZyrT0xCaGjZjICEJZQPMGRvT0tvw==",
+  "dgSpecHash": "bJLRSskuI32yGOSgbrHiZc/rWRFTN81GtYs9I13O8iHDnO8CRKGoCRAJ9c+f6Dj1/PZ9rBxtrsKPrSxHs7mhlw==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinBusinessLogic\\HoltinBusinessLogic.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

@@ -19,11 +19,11 @@ namespace HoltinData.Repositories
         public DefaultResponse<Client> GetClientById(ClientByIdRequest id)
         {
             var query = "SELECT * FROM Client WHERE Id = @id";
-            var parameter = new Dictionary<string, object>() { {"@id", id} };
+            var parameter = new Dictionary<string, object>() { {"@id", id.Id} };
             var response = GetClients(query, parameter);
             return new DefaultResponse<Client>
             {
-                Data = response.Data.First(),
+                Data = response.Data.FirstOrDefault(), // creo un oggetto inutile
                 Errors = response.Errors
             };
         }
@@ -48,16 +48,19 @@ namespace HoltinData.Repositories
             };                             
         }
 
-        public bool Delete(ClientByIdRequest id)
+        public DefaultResponse<bool> Delete(ClientByIdRequest id)
         {
             var query = "DELETE FROM Client WHERE Id = @id";
-            var parameter = new Dictionary<string, object> { { "id", id} };
+            var parameter = new Dictionary<string, object> { { "id", id.Id} };
             var response = ExecuteQuery(query, parameter);
-            if (response.Errors != null || response.Data == 0) { return false; }
-            return true;
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
-        public bool Insert(Client client)
+        public DefaultResponse<bool> Insert(Client client)
         {
             var query = @"INSERT INTO Client  (Name, Surname, BirthDate, TaxIdCode, PhoneNumber, Email, Fidelity)
                           VALUES
@@ -72,12 +75,15 @@ namespace HoltinData.Repositories
                 {"@email", client.Email},
                 {"@fidelity", client.Fidelity}
             };
-            var result = ExecuteQuery(query, parameters);
-            if (result.Errors != null || result.Data == 0) return false;
-            return true;
+            var response = ExecuteQuery(query, parameters);
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
-        public bool Update(Client client)
+        public DefaultResponse<bool> Update(Client client)
         {
             var query = @"UPDATE Client (Name, Surname, BirthDate, TaxIdCode, PhoneNumber, Email, Fidelity)
                           SET
@@ -100,8 +106,11 @@ namespace HoltinData.Repositories
                 {"@Fidelity", client.Fidelity }
             };
             var response = ExecuteQuery(query, parameters);
-            if (response.Errors != null || response.Data == 0) { return false; }
-            return true;
+            return new DefaultResponse<bool>
+            {
+                Data = response.Data == 0 ? false : true,
+                Errors = response.Errors
+            };
         }
 
         private DefaultResponse<List<Client>> GetClients (string query, Dictionary<string, object> parameters)
@@ -112,7 +121,8 @@ namespace HoltinData.Repositories
                 using var connection = new SqlConnection(_dbOptions.ConnectionString);
                 using var command = new SqlCommand(query, connection);
                 connection.Open();
-                var sqlParameters = parameters.Select(p => new SqlParameter(p.Key, p.Value));
+                var sqlParameters = parameters.Select(p => new SqlParameter(p.Key, p.Value)).ToArray();
+                command.Parameters.AddRange(sqlParameters);
                 using var reader = command.ExecuteReader();
                 var clients = new List<Client>();
                 while (reader?.Read() == true)
@@ -131,9 +141,10 @@ namespace HoltinData.Repositories
                     clients.Add(client);
                 }
                 result.Data = clients;
-            } catch (SqlException ex) 
+            } catch (Exception ex) 
             {
-                result.Errors = new string[] {ex.Message}; 
+                result.Errors = new string[] {ex.Message};
+                result.Data = new List<Client>();
             }
             return result;
         }
@@ -150,7 +161,7 @@ namespace HoltinData.Repositories
                 command.Parameters.AddRange(sqlParameters);
                 response.Data = command.ExecuteNonQuery();
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 response.Errors = new string[] { ex.Message };
             }

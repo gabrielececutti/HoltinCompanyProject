@@ -9,8 +9,8 @@ namespace HoltinServices
     {
         public DefaultResponse<Client> GetClientById(ClientByIdRequest id);
         public DefaultResponse<List<Client>> GetClientByFilter(ClientByFilterRequest request);
-        public bool Insert(Client client);
-        public bool Update(Client client);
-        public bool Delete(ClientByIdRequest id);
+        public DefaultResponse<bool> Insert(Client client);
+        public DefaultResponse<bool> Update(Client client);
+        public DefaultResponse<bool> Delete(ClientByIdRequest id);
     }
 }

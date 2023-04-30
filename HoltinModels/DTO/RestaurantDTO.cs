@@ -17,7 +17,6 @@ namespace HoltinModels.DTO
     {
         int Number { get; }
         bool IsReserved { get; }
-        DateTime DateTimeReservation { get; }
 
     }
 }

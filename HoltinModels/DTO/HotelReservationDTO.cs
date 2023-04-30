@@ -11,7 +11,7 @@ namespace HoltinModels.DTO
     {
         public string IdentificationCode { get; }
         public ClientDTO Client { get; }
-        public HotelDTO NomeHotel { get; }      
+        public HotelDTO Hotel { get; }      
         public RoomDTO Room { get; }
         public int Guests { get; }
         public DateTime CheckIn { get; }

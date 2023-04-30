@@ -1,14 +1,9 @@
 ﻿using Bogus;
 using HoltinModels.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoltinConsoleApp.Factories
 {
-    public class RandomClientFactory
+    public class RandomClientFactory 
     {
         private readonly Faker<Client> _faker;
 

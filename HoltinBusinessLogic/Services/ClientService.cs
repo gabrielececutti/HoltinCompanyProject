@@ -24,17 +24,17 @@ namespace HoltinBusinessLogic
             return _clientRepository.GetClientsByFilter(filter);
         }
 
-        public bool Insert(Client client)
+        public DefaultResponse<bool> Insert(Client client)
         {
             return _clientRepository.Insert(client);
         }
 
-        public bool Update(Client client)
+        public DefaultResponse<bool> Update(Client client)
         {
             return _clientRepository.Update(client);
         }
 
-        public bool Delete(ClientByIdRequest id)
+        public DefaultResponse<bool> Delete(ClientByIdRequest id)
         {
             return _clientRepository.Delete(id);
         }

@@ -1,0 +1,3 @@
+non ci possono essere 0 letti in una stanza
+ridondanza chaivi primarie nel db 
+serializzare reservations in json

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZmlCF+DUXQPkZ5tjm4Xjt3YJh2DTxcKjlDR0ieoG3WldA4dBOWFJa0YhXdPECK5mmr1dUBtZZDW55Pf0igYiwA==",
+  "dgSpecHash": "mZSMRMNjFemfocOgtJTVZqxGOyChIur2EW2iCpXmnVJaaPMeUyEL5myg6o8c7+GlJQREXUniaTVWOH5e39tuqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinModels\\HoltinModels.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

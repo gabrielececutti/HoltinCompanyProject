@@ -13,8 +13,8 @@ namespace HoltinServices
     {
         public DefaultResponse<Room> GetRoomById (RoomByIdRequest id);
         public DefaultResponse<List<Room>> GetRoomByFilter(RoomByFilterRequest request);
-        public bool Insert (Room room);
-        public bool Update (Room room);
-        public bool Delete (RoomByIdRequest id);
+        public DefaultResponse<bool> Insert (Room room);
+        public DefaultResponse<bool> Update (Room room);
+        public DefaultResponse<bool> Delete (RoomByIdRequest id);
     }
 }

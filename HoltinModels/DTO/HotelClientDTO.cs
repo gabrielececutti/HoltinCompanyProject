@@ -13,6 +13,8 @@ namespace HoltinModels.DTO
 {
     public class HotelClientDTO : ClientDTO
     {
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public DateOnly DateOfBirth { get; }
         public string TaxIdCode { get; }
         public string Email { get; }

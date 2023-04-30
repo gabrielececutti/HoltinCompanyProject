@@ -30,17 +30,17 @@ namespace HoltinBusinessLogic
             return _hotelRepository.GetHotelsByFilter(request);
         }
 
-        public bool Insert(Hotel hotel)
+        public DefaultResponse<bool> Insert(Hotel hotel)
         {
             return _hotelRepository.Insert(hotel);
         }
 
-        public bool Update(Hotel hotel)
+        public DefaultResponse<bool> Update(Hotel hotel)
         {
             return _hotelRepository.Update(hotel);
         }
 
-        public bool Delete(HotelByIdRequest id)
+        public DefaultResponse<bool> Delete(HotelByIdRequest id)
         {
             return _hotelRepository.Delete(id);
         }
