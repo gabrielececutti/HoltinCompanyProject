@@ -1,0 +1,3 @@
+differenziare cliente solo risotrante
+ridondanza chaivi primarie nel db 
+serializzare reservations in json

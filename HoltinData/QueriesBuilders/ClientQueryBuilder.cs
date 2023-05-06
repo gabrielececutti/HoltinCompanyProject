@@ -114,7 +114,6 @@ namespace HoltinData.QueriesBuilders
                 QueryParameters.Add(FidelityParameterName, fidelity);
             }
             return this;
-
         }
 
         public QueryBuilderResult Build ()

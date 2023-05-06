@@ -157,7 +157,7 @@ namespace HoltinData.Repositories
                 using var connection = new SqlConnection(_dbOptions.ConnectionString);
                 using var command = new SqlCommand(query, connection);
                 connection.Open();
-                var sqlParameters = parameters.Select(x => new SqlParameter(x.Key, x.Value)).ToArray(); // bug non riesce a riconoscere data 
+                var sqlParameters = parameters.Select(x => new SqlParameter(x.Key, x.Value)).ToArray(); 
                 command.Parameters.AddRange(sqlParameters);
                 response.Data = command.ExecuteNonQuery();
             }

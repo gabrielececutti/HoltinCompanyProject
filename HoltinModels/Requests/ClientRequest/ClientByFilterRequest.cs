@@ -16,5 +16,6 @@ namespace HoltinModels.Requests.ClientRequest
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public bool Fidelity { get; set; }
+        public bool OnlyRestaurantClient { get; set; }    
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using Bogus.DataSets;
 using HoltinConsoleApp.Factories;
 using HoltinData.Repositories;
 using HoltinModels.Entities;
@@ -11,19 +12,15 @@ namespace HoltinModels.Factories
         private readonly Faker<Reservation> _faker;
         private readonly RandomClientFactory _randomClientFactory;
         private readonly RoomRepository _roomRepository;
-        private int _guestMax;
-        private int _MaxPriceAddedToNightPrice;
         private int _roomMaxId;
         private readonly Random _random = new Random();
 
-        public RandomReservationFactory(Faker<Reservation> faker, RandomClientFactory randomClientFactory, RoomRepository roomRepository, int guestMax, int maxPriceAddedToNightPrice, int roomMax)
+        public RandomReservationFactory(Faker<Reservation> faker, RandomClientFactory randomClientFactory, RoomRepository roomRepository, int roomIdMax)
         {
             _faker = faker;
             _randomClientFactory = randomClientFactory;
             _roomRepository = roomRepository;
-            _guestMax = guestMax;
-            _MaxPriceAddedToNightPrice = maxPriceAddedToNightPrice;
-            _roomMaxId = roomMax;
+            _roomMaxId = roomIdMax;
         }
 
         /// <summary>
@@ -32,23 +29,32 @@ namespace HoltinModels.Factories
         /// <returns></returns>
         public Reservation Create ()
         {
-            // seleziono una random stanza di un hotel
+            // select a generic room of a hotel
             var room = GetRandomRoom();
 
-            // genero un nuovo ciente
+            // create a new client
             var client = _randomClientFactory.Create();
 
-            // genero la nuova Reservation
+            // create two random dates for checkIn and checkOut
+            var dates = GetGenericDates();
+            var checkIn = dates.Item1;
+            var checkOut = dates.Item2;
+
+            // calculate the price of the room
+            var diff = Math.Abs((checkOut - checkIn).TotalDays);
+            var roomPrice = room.NightPrice * (decimal)diff;
+
+            // create the new reservation
             var reservation = _faker
                         .RuleFor(c => c.Id, f => f.IndexFaker)
                         .RuleFor(c => c.HotelId, f => room.HotelId) 
                         .RuleFor(c => c.RoomId, f => room.Id )
                         .RuleFor(c => c.RoomNumber, f => room.Number ) 
                         .RuleFor(c => c.ClientId, f => client.Id)
-                        .RuleFor(c => c.Guests, f => f.Random.Number(1,_guestMax))
-                        .RuleFor(c => c.CheckIn, f => f.Date.Past(0))
-                        .RuleFor(c => c.CheckOut, f => f.Date.Future(1))
-                        .RuleFor(c => c.TotalPrice, f => f.Random.Number((int)room.NightPrice, (int)room.NightPrice + _MaxPriceAddedToNightPrice))
+                        .RuleFor(c => c.Guests, f => f.Random.Number(1,(room.DoubleBeds * 2) + room.SingleBeds))
+                        .RuleFor(c => c.CheckIn, checkIn)
+                        .RuleFor(c => c.CheckOut, checkOut)
+                        .RuleFor(c => c.TotalPrice, f => f.Random.Number((int) roomPrice, (int) roomPrice + 500))
                         .Generate();
             return reservation;
         }
@@ -60,30 +66,54 @@ namespace HoltinModels.Factories
         /// <returns></returns>
         public Reservation Create (Client client)
         {
-            // seleziono una random stanza di un hotel
+            // select a generic room of a hotel
             var room = GetRandomRoom();
 
-            // genero la nuova Reservation 
+            // create two random dates for checkIn and checkOut
+            var dates = GetGenericDates();
+            var checkIn = dates.Item1;
+            var checkOut = dates.Item2;
+
+            // calculate the price of the room
+            var diff = Math.Abs((checkOut - checkIn).TotalDays);
+            var roomPrice = room.NightPrice * (decimal)diff;
+
+            // create the new reservation
             var reservation = _faker
                         .RuleFor(c => c.Id, f => f.IndexFaker)
                         .RuleFor(c => c.HotelId, f => room.HotelId)
                         .RuleFor(c => c.RoomId, f => room.Id)
                         .RuleFor(c => c.RoomNumber, f => room.Number)
                         .RuleFor(c => c.ClientId, f => client.Id)
-                        .RuleFor(c => c.Guests, f => f.Random.Number(1, _guestMax))
-                        .RuleFor(c => c.CheckIn, f => f.Date.Past(1))
-                        .RuleFor(c => c.CheckOut, f => f.Date.Future(1))
-                        .RuleFor(c => c.TotalPrice, f => f.Random.Number((int)room.NightPrice, (int)room.NightPrice + _MaxPriceAddedToNightPrice))
+                        .RuleFor(c => c.Guests, f => f.Random.Number(1, (room.DoubleBeds * 2) + room.SingleBeds))
+                        .RuleFor(c => c.CheckIn, checkIn)
+                        .RuleFor(c => c.CheckOut, checkOut)
+                        .RuleFor(c => c.TotalPrice, f => f.Random.Number((int)roomPrice, (int)roomPrice + 500))
                         .Generate();
             return reservation;
         }
 
-        // return a random Room from a Hotel
+        // returns a random Room from a Hotel
         private  Room GetRandomRoom ()
         {
             int n = _random.Next(1, _roomMaxId);
             var randomId = new RoomByIdRequest { Id = n };
             return _roomRepository.GetRoomById(randomId).Data;
+        }
+
+        // returns two generic dates with a difference <=20
+        private (DateTime, DateTime) GetGenericDates ()
+        {
+            var faker = new Faker();
+            DateTime date1, date2;
+            TimeSpan difference;
+            do
+            {
+                date1 = faker.Date.Past();
+                date2 = faker.Date.Future();
+                difference = date2 - date1;
+            } while (Math.Abs(difference.TotalDays) > 20);
+            return (date1, date2);
         }
     }
 }

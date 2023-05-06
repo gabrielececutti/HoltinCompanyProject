@@ -160,21 +160,6 @@
           }
         }
       },
-      "HoltinBusinessLogic/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "HoltinModels": "1.0.0",
-          "HoltinRepositories": "1.0.0",
-          "HoltinServices": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/HoltinBusinessLogic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/HoltinBusinessLogic.dll": {}
-        }
-      },
       "HoltinData/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -564,11 +549,6 @@
         "version.txt"
       ]
     },
-    "HoltinBusinessLogic/1.0.0": {
-      "type": "project",
-      "path": "../HoltinBusinessLogic/HoltinBusinessLogic.csproj",
-      "msbuildProject": "../HoltinBusinessLogic/HoltinBusinessLogic.csproj"
-    },
     "HoltinData/1.0.0": {
       "type": "project",
       "path": "../HoltinData/HoltinData.csproj",
@@ -593,7 +573,6 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Bogus >= 34.0.2",
-      "HoltinBusinessLogic >= 1.0.0",
       "HoltinModels >= 1.0.0",
       "HoltinServices >= 1.0.0"
     ]
@@ -630,9 +609,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinBusinessLogic\\HoltinBusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinBusinessLogic\\HoltinBusinessLogic.csproj"
-            },
             "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinModels\\HoltinModels.csproj": {
               "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinModels\\HoltinModels.csproj"
             },
@@ -673,7 +649,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

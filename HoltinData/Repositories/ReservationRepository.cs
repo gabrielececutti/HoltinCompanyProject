@@ -50,11 +50,12 @@ namespace HoltinData.Repositories
 
         public DefaultResponse<bool> Insert(Reservation reservation)
         {
-            var query = @$"INSERT INTO Reservation (HotelId, RoomId, RoomNumber, ClientId, Guests, CheckIn, CheckOut, TotalPrice)
+            var query = @$"INSERT INTO Reservation (Id, HotelId, RoomId, RoomNumber, ClientId, Guests, CheckIn, CheckOut, TotalPrice)
                           VALUES 
-                          (@hotelId, @roomId, @roomNumber, @clientId, @guests, @checkIn, @checkOut, @totalPrice)";
+                          (@id, @hotelId, @roomId, @roomNumber, @clientId, @guests, @checkIn, @checkOut, @totalPrice)";
             var parameters = new Dictionary<string, object>()
             {
+                {"@id", reservation.Id },
                 {"@hotelId", reservation.HotelId},
                 {"@roomId", reservation.RoomId},
                 {"@roomNumber", reservation.RoomNumber},
@@ -100,6 +101,7 @@ namespace HoltinData.Repositories
                 {
                     var reservation = new Reservation()
                     {
+                        Id = reader.GetInt32("id"),
                         HotelId = reader.GetInt32("HotelId"),
                         RoomId = reader.GetInt32("RoomId"),
                         RoomNumber = reader.GetInt32("RoomNumber"),

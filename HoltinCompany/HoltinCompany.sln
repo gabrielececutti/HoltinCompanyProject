@@ -3,32 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EEC4DAD7-AE43-4C43-84C2-691946D31F4F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-BusinessLogic", "2-BusinessLogic", "{EEC4DAD7-AE43-4C43-84C2-691946D31F4F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{00B1D585-BA35-4C71-A911-5982727D2205}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Persistence", "3-Persistence", "{175A6868-FC4B-4C4A-AE3A-10B91434B6DE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{175A6868-FC4B-4C4A-AE3A-10B91434B6DE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E7D617FC-33D4-49BD-B97D-7AA5CFF3EF43}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinBusinessLogic", "..\HoltinBusinessLogic\HoltinBusinessLogic.csproj", "{FA1A08BA-2BBF-4216-B6CC-6230138D9B2F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{E7D617FC-33D4-49BD-B97D-7AA5CFF3EF43}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinModels", "..\HoltinModels\HoltinModels.csproj", "{1C3592E0-8775-4036-8349-8E1F858FE3BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinRepositories", "..\HoltinRepositories\HoltinRepositories.csproj", "{BEDD561B-39C8-402E-A656-E3DC07428155}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinServices", "..\HoltinServices\HoltinServices.csproj", "{337B747D-7BF1-4744-83C4-F6708C3DD901}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinConsoleApp", "..\HoltinConsoleApp\HoltinConsoleApp.csproj", "{26138C70-4C0E-4C01-8884-C41E79BE244F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinData", "..\HoltinData\HoltinData.csproj", "{5CB98808-AE9C-4C0C-A1CA-C9FD7AE29635}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B5FEC7F8-7F2D-4F40-AE8A-E459FAB59820}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{B5FEC7F8-7F2D-4F40-AE8A-E459FAB59820}"
 	ProjectSection(SolutionItems) = preProject
-		Appunti.txt = Appunti.txt
-		settings.json = settings.json
 		text.txt = text.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoltinWebApplication", "HoltinWebApplication\HoltinWebApplication.csproj", "{D646B411-C267-4CC8-987A-675A882C4643}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,41 +28,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FA1A08BA-2BBF-4216-B6CC-6230138D9B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA1A08BA-2BBF-4216-B6CC-6230138D9B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA1A08BA-2BBF-4216-B6CC-6230138D9B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA1A08BA-2BBF-4216-B6CC-6230138D9B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C3592E0-8775-4036-8349-8E1F858FE3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C3592E0-8775-4036-8349-8E1F858FE3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3592E0-8775-4036-8349-8E1F858FE3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C3592E0-8775-4036-8349-8E1F858FE3BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BEDD561B-39C8-402E-A656-E3DC07428155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEDD561B-39C8-402E-A656-E3DC07428155}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEDD561B-39C8-402E-A656-E3DC07428155}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEDD561B-39C8-402E-A656-E3DC07428155}.Release|Any CPU.Build.0 = Release|Any CPU
 		{337B747D-7BF1-4744-83C4-F6708C3DD901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{337B747D-7BF1-4744-83C4-F6708C3DD901}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{337B747D-7BF1-4744-83C4-F6708C3DD901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{337B747D-7BF1-4744-83C4-F6708C3DD901}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26138C70-4C0E-4C01-8884-C41E79BE244F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26138C70-4C0E-4C01-8884-C41E79BE244F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26138C70-4C0E-4C01-8884-C41E79BE244F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26138C70-4C0E-4C01-8884-C41E79BE244F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5CB98808-AE9C-4C0C-A1CA-C9FD7AE29635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5CB98808-AE9C-4C0C-A1CA-C9FD7AE29635}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CB98808-AE9C-4C0C-A1CA-C9FD7AE29635}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CB98808-AE9C-4C0C-A1CA-C9FD7AE29635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D646B411-C267-4CC8-987A-675A882C4643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D646B411-C267-4CC8-987A-675A882C4643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D646B411-C267-4CC8-987A-675A882C4643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D646B411-C267-4CC8-987A-675A882C4643}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FA1A08BA-2BBF-4216-B6CC-6230138D9B2F} = {00B1D585-BA35-4C71-A911-5982727D2205}
 		{1C3592E0-8775-4036-8349-8E1F858FE3BF} = {EEC4DAD7-AE43-4C43-84C2-691946D31F4F}
-		{BEDD561B-39C8-402E-A656-E3DC07428155} = {EEC4DAD7-AE43-4C43-84C2-691946D31F4F}
 		{337B747D-7BF1-4744-83C4-F6708C3DD901} = {EEC4DAD7-AE43-4C43-84C2-691946D31F4F}
-		{26138C70-4C0E-4C01-8884-C41E79BE244F} = {E7D617FC-33D4-49BD-B97D-7AA5CFF3EF43}
 		{5CB98808-AE9C-4C0C-A1CA-C9FD7AE29635} = {175A6868-FC4B-4C4A-AE3A-10B91434B6DE}
+		{D646B411-C267-4CC8-987A-675A882C4643} = {E7D617FC-33D4-49BD-B97D-7AA5CFF3EF43}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EE239D6-8CE3-4DBF-93B1-753C1D7097A8}

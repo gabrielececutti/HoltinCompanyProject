@@ -16,5 +16,10 @@ namespace HoltinModels.Entities
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public bool Fidelity { get; set; }
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Name: {Name}, Surname: {Surname}, BirthDate: {BirthDate}, TaxIdCode: {TaxIdCode}, PhoneNumber: {PhoneNumber}, Email: {Email}, Fidelity: {Fidelity}";
+        }
     }
 }

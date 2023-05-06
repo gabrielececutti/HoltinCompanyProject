@@ -52,6 +52,12 @@ CheckOut DateTime not null,
 TotalPrice decimal not null,
 )
 
+create table TableReservation (
+Id int primary key not null,
+ClientId int not null foreign key references Client(Id),
+Seats int not null
+)
+
 -- FILL TABLE HOTEL
 insert into Hotel ([Name], City)
 values 
@@ -95,8 +101,8 @@ BEGIN
     DECLARE @hotelId INT = CAST(RAND() * @hotelCount + 1 AS INT)
     DECLARE @number INT = CAST(RAND() * 100 + 1 AS INT)
     DECLARE @booked BIT = ROUND(RAND(), 0)
-    DECLARE @singleBeds INT = ROUND(RAND() * 3, 0)
-    DECLARE @doubleBeds INT = ROUND(RAND() * 2, 0);
+    DECLARE @singleBeds INT = ROUND(RAND() * 3,0)
+    DECLARE @doubleBeds INT = ABS(CHECKSUM(NEWID())) % 2 + 1
 	DECLARE @wifi BIT = ROUND(RAND(), 0)
 	DECLARE @roomService BIT = ROUND(RAND(), 0)
 	DECLARE @airConditioning BIT = ROUND(RAND(), 0)
@@ -154,6 +160,4 @@ values
 (29, 40),
 (30, 25);
 
-select * from Hotel
-select * from Room where Room.HotelId = 1
-select * from Client
+
