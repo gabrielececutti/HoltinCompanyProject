@@ -116,6 +116,7 @@ namespace HoltinData.Repositories
             }
             catch (Exception ex)
             {
+                // si potrebbe gestire l'eccezione di accesso ai dati (waiting ecc)
                 result.Errors = new string[] { ex.Message };
                 result.Data = new List<Reservation>();
             }
@@ -136,6 +137,7 @@ namespace HoltinData.Repositories
             }
             catch (Exception ex)
             {
+                // si potrebbe gestire l'eccezione di accesso ai dati (waiting ecc)
                 response.Errors = new string[] { ex.Message };
             }
             return response;

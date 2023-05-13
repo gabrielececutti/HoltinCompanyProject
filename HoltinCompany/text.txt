@@ -4,11 +4,13 @@ Ogni albergo è a 3, 4 o 5 stelle, offre 1 o più ristoranti al suo interno ( può 
 
 Si necessita di una WEB API che consenta di implementare queste operazioni principali: 
 
-• vedere tutti gli hotel della compagnia (quelli che hanno stanze libere e quelli già tutti al completo) con le varie informazioni.
+• vedere tutti gli hotel della compagnia con il numero di stanze disponibili.
 
-• poter cercare quali alberghi di certe caratteristiche hanno disponibilità di stanze con certe caratteristiche.
+• selezionare un hotel con certe caratteristiche 
 
-• per gli alberghi trovati occorre sapere il prezzo previsto per la prenotazione, tenendo conto del numero di ospiti dell’eventuale prenotazione 
+• poter selezionare le stanze dell' hotel con certe caratteristiche. (se non ci sono ritrornare tutte le stanze degli hotel che che soddifano le richieste)
+
+• calcolare il prezzo previsto per la prenotazione, tenendo conto del numero di ospiti dell’eventuale prenotazione 
   (es. un singolo o una famiglia di 5 persone), della stanza, dai servizi scelti e da eventuali sconti.
 
 
@@ -20,5 +22,9 @@ NOTE:
                       durata prenotazione: >= di 5 giorni, sconto del 6%.
 
 
+appunti: 
+per testare fare due app (app per servizi utente) (app per servizi amministratore)
+rivedere tutta la gestione degli errori 
 
-* PLUS: fare un database che contiene account amministratori che hanno accesso ai servizi per fare modifche cancellazioni di hotel, stanze ecc.
+
+* PLUS: implemntare un servizio di autenticazione per gli amministratori che hanno accesso ai servizi per fare modifche cancellazioni di hotel, stanze ecc.

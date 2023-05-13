@@ -44,6 +44,28 @@ namespace HoltinData.Repositories
             };
         }
 
+        public DefaultResponse<List<HotelRoomNumber>> GetAllHotelsWithNumOfFreeRooms()
+        {
+            var query = @"SELECT
+                            Hotel.Id,
+                            Hotel.Name,
+                            COUNT(Room.Id) AS NumberOfRooms,
+                            COUNT(CASE WHEN Room.Booked = 0 THEN Room.Id END) AS NumberOfFreeRooms
+                         FROM
+                            Hotel
+                            INNER JOIN Room ON Hotel.Id = Room.HotelId
+                         GROUP BY
+                            Hotel.Id,
+                            Hotel.Name
+                            Hotel.City";
+            var response = GetHotels(query);
+            return new DefaultResponse<List<HotelRoomNumber>>()
+            {
+                Data = response.Data,
+                Errors = response.Errors
+            };
+        }
+
         public DefaultResponse<bool> Insert(Hotel hotel)
         {
             var query = @$"INSERT INTO Hotel (Name, City)
@@ -121,8 +143,45 @@ namespace HoltinData.Repositories
             }
             catch (Exception ex)
             {
+                // si potrebbe gestire l'eccezione di accesso ai dati (waiting ecc)
                 result.Errors = new string[] { ex.Message };
                 result.Data = new List<Hotel>();
+            }
+            return result;
+        }
+
+        private DefaultResponse<List<HotelRoomNumber>> GetHotels(string query)
+        {
+            var result = new DefaultResponse<List<HotelRoomNumber>>();
+            try
+            {
+                using var connection = new SqlConnection(_dbOptions.ConnectionString);
+                using var command = new SqlCommand(query, connection);
+                connection.Open();
+                using var reader = command.ExecuteReader();
+                var hotels = new List<HotelRoomNumber>();
+                while (reader?.Read() == true)
+                {
+                    var hotel = new HotelRoomNumber()
+                    {
+                        Hotel =
+                        {
+                            Id = reader.GetInt32("Id"),
+                            Name = reader.GetString("Name"),
+                            City = reader.GetString("City")
+                        },
+                        NumberOfRooms = reader.GetInt32("NumberOfRooms"),
+                        NumberOfFreeRooms = reader.GetInt32("NumberOfFreeRooms")
+                    };
+                    hotels.Add(hotel);
+                }
+                result.Data = hotels;
+            }
+            catch (Exception ex)
+            {
+                // si potrebbe gestire l'eccezione di accesso ai dati (waiting ecc)
+                result.Errors = new string[] { ex.Message };
+                result.Data = new List<HotelRoomNumber>();
             }
             return result;
         }
@@ -140,6 +199,7 @@ namespace HoltinData.Repositories
                 response.Data = command.ExecuteNonQuery();
             } catch(Exception ex)
             {
+                // si potrebbe gestire l'eccezione di accesso ai dati (waiting ecc)
                 response.Errors = new string[] { ex.Message };
             }
             return response;

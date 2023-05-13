@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HoltinModels.Entities;
+using HoltinModels.Requests;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,6 @@ namespace HoltinServices.ReservationService
 {
     public interface IReservationService
     {
+        public Reservation CreateNewReservation(UserReservationRequest userReservationRequest);
     }
 }

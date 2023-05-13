@@ -14,6 +14,19 @@
             "related": ".xml"
           }
         }
+      },
+      "HoltinCompanyDomain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Bogus": "34.0.2"
+        },
+        "compile": {
+          "bin/placeholder/HoltinCompanyDomain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HoltinCompanyDomain.dll": {}
+        }
       }
     }
   },
@@ -36,12 +49,17 @@
         "lib/netstandard2.0/Bogus.dll",
         "lib/netstandard2.0/Bogus.xml"
       ]
+    },
+    "HoltinCompanyDomain/1.0.0": {
+      "type": "project",
+      "path": "../HoltinCompanyDomain/HoltinCompanyDomain.csproj",
+      "msbuildProject": "../HoltinCompanyDomain/HoltinCompanyDomain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Bogus >= 34.0.2",
-      "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj"
+      "HoltinCompanyDomain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -116,16 +134,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinCompanyDomain\\HoltinCompanyDomain.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

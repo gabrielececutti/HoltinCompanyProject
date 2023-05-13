@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HoltinData\HoltinData.csproj" />
+    <ProjectReference Include="..\HoltinCompany\HoltinWebApplication\HoltinWebApplication.csproj" />
     <ProjectReference Include="..\HoltinModels\HoltinModels.csproj" />
   </ItemGroup>
 

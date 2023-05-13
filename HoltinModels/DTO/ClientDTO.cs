@@ -16,7 +16,6 @@ namespace HoltinModels.DTO
         public string TaxidCode { get; }
         public string PhoneNumber { get; }
         public string Email { get; }
-        public bool Fidelity { get; set; }
-        public List<Reservation> Reservations { get; set; }
+        public List<ReservationDTO> Reservations { get; set; }
     }
 }

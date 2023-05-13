@@ -30,6 +30,11 @@ namespace HoltinData.PersistenceService
             return _hotelRepository.GetHotelsByFilter(request);
         }
 
+        public DefaultResponse<List<HotelRoomNumber>> GetAllHotelsWithNumOfFreeRooms()
+        {
+            return _hotelRepository.GetAllHotelsWithNumOfFreeRooms();
+        }
+
         public DefaultResponse<bool> Insert(Hotel hotel)
         {
             return _hotelRepository.Insert(hotel);

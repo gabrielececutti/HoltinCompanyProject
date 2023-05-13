@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoltinModels.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace HoltinServices.ClientService
 {
     public interface IClientService
     {
+        public List<Reservation> GetReservationBooked(Client client);
     }
 }

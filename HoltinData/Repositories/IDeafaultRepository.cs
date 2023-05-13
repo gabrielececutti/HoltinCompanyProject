@@ -11,6 +11,7 @@ namespace HoltinRepositories
     {
         public DefaultResponse<Hotel> GetHotelById (HotelByIdRequest id);
         public DefaultResponse<List<Hotel>> GetHotelsByFilter (HotelByFilterRequest filter);
+        public DefaultResponse<List<HotelRoomNumber>> GetAllHotelsWithNumOfFreeRooms();
         public DefaultResponse<bool> Insert (Hotel hotel);
         public DefaultResponse<bool> Update (Hotel hotel);
         public DefaultResponse<bool> Delete (HotelByIdRequest id);

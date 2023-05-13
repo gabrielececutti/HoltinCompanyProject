@@ -41,22 +41,24 @@ Fidelity bit default 0,
 )
 
 create table Reservation(
-Id int primary key not null,
+Id int identity (1,1) primary key not null,
 HotelId int not null foreign key references Hotel (Id), 
 RoomId int not null foreign key references Room (Id),
 RoomNumber int not null,
 ClientId int not null foreign key references Client (Id),
 Guests int not null,
-CheckIn DateTime not null,
-CheckOut DateTime not null,
+CheckIn Date not null,
+CheckOut Date not null,
 TotalPrice decimal not null,
 )
 
-create table TableReservation (
-Id int primary key not null,
-ClientId int not null foreign key references Client(Id),
-Seats int not null
+create table Administrator (
+Id int identity (100000,1) not null primary key,
+Username nvarchar(80) not null,
+Password nvarchar(80) not null,
+Description nvarchar(100) not null
 )
+
 
 -- FILL TABLE HOTEL
 insert into Hotel ([Name], City)
@@ -160,4 +162,36 @@ values
 (29, 40),
 (30, 25);
 
+--FILL TABLE ADMINISTRATOR
+insert into Administrator
+values
+('willimas@holtincompany.it', 'defSXcd35&&£3gd', 'CEO'),
+('brown@holtincompany.it', 'WBBWDbldlcbhdhbl63246("£$', 'director'),
+('davis@holtincompany.it', 'sdcdvHHEJdbewh454%%"3', 'vice director'),
+('jordan@holtincompany.it', 'sdcjndbferQF$$GFwx"', 'Human Resources Manager'),
+('smith@holtincompany.it', 'HLIBdcccd7473&/','Front Office Manager'),
+('johnson@holtincompany.it', 'cocnercHO&3&%$DCs' ,'developer'),
+('jone@holtincompany.it', 'HBHOOVHWwxedv&$!"6722', 'system administrator'),
+('miller@holtincompany.it', 'dscerv45754dsxVVV5%&"!', 'cybersecurity specialist')
 
+SELECT
+  Hotel.Id,
+  Hotel.Name,
+  Hotel.City,
+  COUNT(Room.Id) AS NumRooms,
+  COUNT(CASE WHEN Room.Booked = 0 THEN Room.Id END) AS NumFreeRooms
+FROM
+  Hotel
+  INNER JOIN Room ON Hotel.Id = Room.HotelId
+GROUP BY
+  Hotel.Id,
+  Hotel.Name,
+  Hotel.City
+
+
+  select * from Hotel
+  select * from Room
+  select * from Restaurant
+  select * from Client
+  select * from Reservation
+  select * from Administrator

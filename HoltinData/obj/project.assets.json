@@ -172,19 +172,6 @@
         "runtime": {
           "bin/placeholder/HoltinModels.dll": {}
         }
-      },
-      "HoltinRepositories/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "HoltinModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/HoltinRepositories.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/HoltinRepositories.dll": {}
-        }
       }
     }
   },
@@ -525,16 +512,11 @@
       "type": "project",
       "path": "../HoltinModels/HoltinModels.csproj",
       "msbuildProject": "../HoltinModels/HoltinModels.csproj"
-    },
-    "HoltinRepositories/1.0.0": {
-      "type": "project",
-      "path": "../HoltinRepositories/HoltinRepositories.csproj",
-      "msbuildProject": "../HoltinRepositories/HoltinRepositories.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "HoltinRepositories >= 1.0.0",
+      "HoltinModels >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
@@ -570,8 +552,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinRepositories\\HoltinRepositories.csproj": {
-              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinRepositories\\HoltinRepositories.csproj"
+            "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinModels\\HoltinModels.csproj": {
+              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HotelProject\\HoltinModels\\HoltinModels.csproj"
             }
           }
         }
