@@ -1,4 +1,6 @@
-﻿using HoltinModels.Requests;
+﻿using HoltinModels.DiscountCalculatorDecoarator;
+using HoltinModels.Entities;
+using HoltinModels.Requests;
 using HoltinWebApplication;
 using System;
 using System.Collections.Generic;
@@ -11,30 +13,23 @@ namespace HoltinServices.Helpers
 {
     public class ReservationPriceCalculator
     {
-        private readonly DiscountPolicies _discountPolitices;
-        private const decimal PercentageRoomPriceGuest = 0.10M; 
+        private const decimal PercentageRoomPriceGuest = 0.010M;
+        private readonly DiscountCalculator _discountCalculator;
 
-        public ReservationPriceCalculator(DiscountPolicies discountPolitices)
+        public ReservationPriceCalculator(DiscountCalculator discountCalculator)
         {
-            _discountPolitices = discountPolitices;
+            _discountCalculator = discountCalculator;
         }
 
         public decimal Calculate (UserReservationRequest userReservationRequest)
         {
-            var totalPrice = 0;
-
             var guest = userReservationRequest.Guest;
-            var client = userReservationRequest.Client;
             var room = userReservationRequest.Room;
-            var duration = userReservationRequest.CheckOut - userReservationRequest.CheckIn;
+            var totalRoomPrice = room.NightPrice + (guest * (room.NightPrice * PercentageRoomPriceGuest));
 
-            var roomPrice = room.NightPrice + (guest * (room.NightPrice * PercentageRoomPriceGuest));
-            var durationScount = 0;
-            if (duration.Days >= _discountPolitices.ReservationDuration.Item2)
-            {
-                durationScount += _discountPolitices.ReservationDuration.Item2 * room.NightPrice;
-            }
-            return totalPrice;
+            var discountPercentage = _discountCalculator.GetDiscount(userReservationRequest);
+
+            return totalRoomPrice - (totalRoomPrice * discountPercentage);
         }
     }
 }

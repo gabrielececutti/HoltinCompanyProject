@@ -1,5 +1,0 @@
-C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HoltinAdministratorsServices.csproj.AssemblyReference.cache
-C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HoltinAdministratorsServices.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HoltinAdministratorsServices.AssemblyInfoInputs.cache
-C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HoltinAdministratorsServices.AssemblyInfo.cs
-C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HotelProject\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HoltinAdministratorsServices.csproj.CoreCompileInputs.cache
