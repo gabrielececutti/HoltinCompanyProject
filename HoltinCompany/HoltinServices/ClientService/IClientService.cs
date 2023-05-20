@@ -10,6 +10,5 @@ namespace HoltinServices.ClientService
     public interface IClientService
     {
         public List<Reservation> GetReservationBooked(Client client);
-
     }
 }

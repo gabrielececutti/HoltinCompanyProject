@@ -45,6 +45,8 @@ namespace ConsoleApp
         {
             // nuovo account (con facotry)
             var client = _randomClientFactory.Create();
+            client.Password = "Querty12345$";
+            Console.WriteLine( client.ToString());
 
             // verifica con validatori 
             _signupService.SignUp(client);
@@ -54,31 +56,44 @@ namespace ConsoleApp
 
             // vedere tutti gli hotel con il numero di stanze diponibili
             var result = _hotelService.GetHotelsWithRoomsDisponibility();
-            result.Data.ForEach(h => Console.WriteLine(h.ToString()));
+            result.Data.ForEach ( x => Console.WriteLine(x));
 
             // select di un hotel con filtro
             var hotels = _hotelService.GetHotelsWithFilter(new HotelByFilterRequest() { City = "Tokyo" });
-            hotels.Data.ForEach(h => Console.WriteLine(h));
+            hotels.Data.ForEach( x => Console.WriteLine(x)); 
 
             // select room con filtro per quell'hotel 
             var roomFiletr = new RoomByFilterRequest() { WiFi = true, NigthPriceMax = 350, SingleBeds = 1, DoubleBeds = 1 };
             var rooms = _roomService.GetRoomsWithFilter(roomFiletr);
-            rooms.Data.ForEach( r => Console.WriteLine(r.ToString()));
-            Console.WriteLine(  );
+            rooms.Data.ForEach( x => Console.WriteLine(x));
+
+
             // istanziare nuova reservation
+            var room = rooms.Data.First(); 
             var userRequest = new UserReservationRequest()
             {
-                Client = client, 
-                Room = rooms.Data.First(),
+                Client = client,
+                Hotel = _hotelService.GetHotelById( new HotelByIdRequest { Id = room.HotelId }).Data,
+                Room = room,
                 CheckIn = new DateTime(2023, 7, 10),
                 CheckOut = new DateTime(2023, 7, 15),
                 Guest = 10
             };
-            Console.WriteLine(  userRequest.Room);
             var reservation = _reservationService.CreateNewReservation(userRequest);
+            Console.WriteLine( "PRENOTAZIONE ISTANZIATA: ");
             Console.WriteLine(reservation.ToString());
 
-            // inserirla nel db e nell'account cliente
+            // inserirla nel db e update tabella room (la resevation è già collegata al cliente)
+            var x = _bookingService.BookNewReservation(reservation); // fare il controllo che la stanza non sia occupata
+            Console.WriteLine( x);
+
+            // ottenre reservation del cliente
+            Console.WriteLine("PRENOTAZIONE DEL CLIENTE: ");
+            var reservationsBooked = _clientService.GetReservationBooked(client).First();
+            reservationsBooked.Hotel = userRequest.Hotel;
+            reservationsBooked.Room = room;
+            reservationsBooked.Client = client;
+            Console.WriteLine(reservationsBooked.ToString());
         }
     }
 }

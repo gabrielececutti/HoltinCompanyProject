@@ -25,6 +25,11 @@ namespace HoltinServices.HotelService
             return _hotelPersistenceService.GetHotelsByFilter(request);
         }
 
+        public DefaultResponse<Hotel> GetHotelById(HotelByIdRequest request)
+        {
+            return _hotelPersistenceService.GetHotelById(request);
+        }
+
         public DefaultResponse<List<HotelRoomNumber>> GetHotelsWithRoomsDisponibility()
         {
             return _hotelPersistenceService.GetAllHotelsWithNumOfFreeRooms();

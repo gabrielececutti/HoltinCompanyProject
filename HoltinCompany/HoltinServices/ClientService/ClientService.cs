@@ -23,6 +23,6 @@ namespace HoltinServices.ClientService
         {
             var request = new ReservationByFilterRequest { ClientId = client.Id };
             return _reservationPersistenceService.GetReservationsByFilter(request).Data;
-        }
+         }
     }
 }

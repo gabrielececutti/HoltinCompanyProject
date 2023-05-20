@@ -15,7 +15,7 @@ namespace HoltinConsoleApp.Factories
         public Client Create ()
         {
             var client = _faker
-                        .RuleFor(c => c.Id, f => f.IndexFaker + 1)
+                        .RuleFor(c => c.Id, f => f.Random.Number(100000))
                         .RuleFor(c => c.Name, f => f.Name.FirstName())
                         .RuleFor(c => c.Surname, f => f.Name.LastName())
                         .RuleFor(c => c.BirthDate, f => f.Person.DateOfBirth)

@@ -26,9 +26,12 @@ namespace HoltinServices.ReservationService
 
             var reservation = new Reservation
             {
-                //HotelId = hotel.Id,
+                Hotel = hotel,
+                HotelId = hotel.Id,
                 RoomId = room.Id,
                 RoomNumber = room.Number,
+                Room = room,
+                Client = client,
                 ClientId = client.Id,
                 Guests = userReservationRequest.Guest,
                 CheckIn = userReservationRequest.CheckIn,

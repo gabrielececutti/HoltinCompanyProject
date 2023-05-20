@@ -550,6 +550,7 @@
       },
       "HoltinServices/1.0.0": {
         "dependencies": {
+          "HoltinAutentication": "1.0.0",
           "HoltinData": "1.0.0",
           "HoltinModels": "1.0.0"
         },

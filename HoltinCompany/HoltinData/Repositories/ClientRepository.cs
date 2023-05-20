@@ -63,11 +63,12 @@ namespace HoltinData.Repositories
 
         public DefaultResponse<bool> Insert(Client client)
         {
-            var query = @"INSERT INTO Client  (Name, Surname, BirthDate, TaxIdCode, PhoneNumber, Email, Password, Fidelity)
+            var query = @"INSERT INTO Client  (Id, Name, Surname, BirthDate, TaxIdCode, PhoneNumber, Email, Password, Fidelity)
                           VALUES
-                          (@name, @surname, @birthDate, @taxIdCode, @phoneNumber, @email, @password, @fidelity)";
+                          (@id, @name, @surname, @birthDate, @taxIdCode, @phoneNumber, @email, @password, @fidelity)";
             var parameters = new Dictionary<string, object>
             {
+                {"@id", client.Id},
                 {"@name", client.Name},
                 {"@surname", client.Surname},
                 {"@birthDate", client.BirthDate},

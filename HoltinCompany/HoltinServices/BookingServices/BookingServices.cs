@@ -1,5 +1,8 @@
-﻿using HoltinData.PersistenceService;
+﻿using CredentialMangementModels.Response;
+using HoltinData.PersistenceService;
 using HoltinModels.Entities;
+using HoltinModels.Requests.ReservationRequest;
+using HoltinModels.Requests.RoomRequest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,8 +26,9 @@ namespace HoltinServices.ClientService
         {
             try
             {
-                _reservationPersistenceService.Insert(reservation);
                 var room = reservation.Room;
+                if (room.Booked) return false;
+                _reservationPersistenceService.Insert(reservation);
                 room.Booked = true;
                 _roomPersistenceService.Update(room); // o trigger?
             } catch (Exception)

@@ -19,7 +19,7 @@ namespace HoltinServices.HotelService
         /// <returns></returns>
         public DefaultResponse<List<HotelRoomNumber>> GetHotelsWithRoomsDisponibility();
 
-        
+        public DefaultResponse<Hotel> GetHotelById(HotelByIdRequest request);
         /// <summary>
         /// Riotrna gli hotel che soddisfano la richiesta
         /// </summary>
