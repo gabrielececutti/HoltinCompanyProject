@@ -111,12 +111,10 @@ C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBac
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinAdministratorsServices.dll
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinAutentication.dll
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinData.dll
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinModels.dll
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinServices.dll
-C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinAdministratorsServices.pdb
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinAutentication.pdb
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinData.pdb
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HoltinModels.pdb
@@ -132,3 +130,5 @@ C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBac
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\obj\Debug\net6.0\ConsoleApp.pdb
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\obj\Debug\net6.0\ConsoleApp.genruntimeconfig.cache
 C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\obj\Debug\net6.0\ref\ConsoleApp.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HiltonDataUpdateServices.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\ConsoleApp\bin\Debug\net6.0\HiltonDataUpdateServices.pdb

@@ -10,6 +10,7 @@ namespace HoltinModels.Requests.RoomRequest
     {
         public int HotelId { get; set; }
         public int Guests { get; set; }
+        public bool Booked { get; set; }
         public int SingleBeds { get; set; }
         public int DoubleBeds { get; set; }
         public bool WiFi { get; set; }

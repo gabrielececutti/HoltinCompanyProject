@@ -818,17 +818,17 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
-      "HoltinAdministratorsServices/1.0.0": {
+      "HiltonDataUpdateServices/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "HoltinData": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/HoltinAdministratorsServices.dll": {}
+          "bin/placeholder/HiltonDataUpdateServices.dll": {}
         },
         "runtime": {
-          "bin/placeholder/HoltinAdministratorsServices.dll": {}
+          "bin/placeholder/HiltonDataUpdateServices.dll": {}
         }
       },
       "HoltinAutentication/1.0.0": {
@@ -2174,10 +2174,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "HoltinAdministratorsServices/1.0.0": {
+    "HiltonDataUpdateServices/1.0.0": {
       "type": "project",
-      "path": "../HoltinAdministratorsServices/HoltinAdministratorsServices.csproj",
-      "msbuildProject": "../HoltinAdministratorsServices/HoltinAdministratorsServices.csproj"
+      "path": "../HoltinAdministratorsServices/HiltonDataUpdateServices.csproj",
+      "msbuildProject": "../HoltinAdministratorsServices/HiltonDataUpdateServices.csproj"
     },
     "HoltinAutentication/1.0.0": {
       "type": "project",
@@ -2202,7 +2202,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "HoltinAdministratorsServices >= 1.0.0",
+      "HiltonDataUpdateServices >= 1.0.0",
       "HoltinAutentication >= 1.0.0",
       "HoltinData >= 1.0.0",
       "HoltinModels >= 1.0.0",
@@ -2244,8 +2244,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HoltinAdministratorsServices.csproj": {
-              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HoltinAdministratorsServices.csproj"
+            "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HiltonDataUpdateServices.csproj": {
+              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HiltonDataUpdateServices.csproj"
             },
             "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAutentication\\HoltinAutentication.csproj": {
               "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAutentication\\HoltinAutentication.csproj"

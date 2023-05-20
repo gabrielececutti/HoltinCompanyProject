@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q82afuVCPGmMl3qQoVmVFtLOFbgmhGYvBE9suVttay6umqLuTtWP5/m3NzhfYsYSguiMLgTEzymE/6duRe1L2w==",
+  "dgSpecHash": "kgggmxuPGJvz2+aisAyP0g5ox57R0G1LZ8HBzFQ6AAFQIdoCvTXKoa0pDaugSJlQ23ms0bXyrI1S5ABTAli8ug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HoltinAdministratorsServices.csproj",
+  "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HiltonDataUpdateServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabri\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

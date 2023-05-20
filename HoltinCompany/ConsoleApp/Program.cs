@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using ConsoleApp;
 using ConsoleApp.IOC;
+using HoltinAdministratorsServices.AdministratorServicesOnRoom;
 using HoltinConsoleApp.Factories;
 using HoltinData;
 using HoltinModels.DiscountCalculator;
@@ -28,6 +29,7 @@ var bookingService = host.Services.GetService<IBookingService>();
 var loginService = host.Services.GetRequiredService<ILoginService>();
 var signupService = host.Services.GetRequiredService<ISignupService>();
 var randomClientFactory = new RandomClientFactory(new Faker<Client>());
+var updateRoomService = host.Services.GetRequiredService<IRoomUpdateService>();
 
-var app = new UserApp(hotelService, reservstionService, roomService,loginService, signupService, clientService, bookingService, randomClientFactory);
+var app = new UserApp(hotelService, reservstionService, roomService,loginService, signupService, clientService, bookingService, randomClientFactory, updateRoomService);
 app.Run();

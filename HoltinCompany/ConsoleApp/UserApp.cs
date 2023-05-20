@@ -1,4 +1,5 @@
-﻿using HoltinConsoleApp.Factories;
+﻿using HoltinAdministratorsServices.AdministratorServicesOnRoom;
+using HoltinConsoleApp.Factories;
 using HoltinModels.Entities;
 using HoltinModels.Requests;
 using HoltinModels.Requests.HotelRequest;
@@ -28,8 +29,9 @@ namespace ConsoleApp
         private readonly IClientService _clientService;
         private readonly IBookingService _bookingService;
         private readonly RandomClientFactory _randomClientFactory;
+        private readonly IRoomUpdateService _roomUpdateService;
 
-        public UserApp(IHotelService hotelService, IReservationService reservationService, IRoomService roomService, ILoginService loginService, ISignupService signupService, IClientService clientService, IBookingService bookingService, RandomClientFactory randomClientFactory)
+        public UserApp(IHotelService hotelService, IReservationService reservationService, IRoomService roomService, ILoginService loginService, ISignupService signupService, IClientService clientService, IBookingService bookingService, RandomClientFactory randomClientFactory, IRoomUpdateService roomUpdateService)
         {
             _hotelService = hotelService;
             _reservationService = reservationService;
@@ -39,6 +41,7 @@ namespace ConsoleApp
             _clientService = clientService;
             _bookingService = bookingService;
             _randomClientFactory = randomClientFactory;
+            _roomUpdateService = roomUpdateService;
         }
 
         public void Run()
@@ -60,10 +63,10 @@ namespace ConsoleApp
 
             // select di un hotel con filtro
             var hotels = _hotelService.GetHotelsWithFilter(new HotelByFilterRequest() { City = "Tokyo" });
-            hotels.Data.ForEach( x => Console.WriteLine(x)); 
+            hotels.Data.ForEach( x => Console.WriteLine(x));
 
             // select room con filtro per quell'hotel 
-            var roomFiletr = new RoomByFilterRequest() { WiFi = true, NigthPriceMax = 350, SingleBeds = 1, DoubleBeds = 1 };
+            var roomFiletr = new RoomByFilterRequest() { WiFi = true, NigthPriceMax = 350, SingleBeds = 1, DoubleBeds = 1, Booked = false };
             var rooms = _roomService.GetRoomsWithFilter(roomFiletr);
             rooms.Data.ForEach( x => Console.WriteLine(x));
 
@@ -75,17 +78,25 @@ namespace ConsoleApp
                 Client = client,
                 Hotel = _hotelService.GetHotelById( new HotelByIdRequest { Id = room.HotelId }).Data,
                 Room = room,
-                CheckIn = new DateTime(2023, 7, 10),
-                CheckOut = new DateTime(2023, 7, 15),
+                CheckIn = new DateTime(2023, 5, 10),
+                CheckOut = new DateTime(2023, 5, 26),
                 Guest = 10
             };
             var reservation = _reservationService.CreateNewReservation(userRequest);
             Console.WriteLine( "PRENOTAZIONE ISTANZIATA: ");
             Console.WriteLine(reservation.ToString());
 
+            var filter2 = new RoomByFilterRequest() { WiFi = true, NigthPriceMax = 101, SingleBeds = 1, DoubleBeds = 1, Booked = true };
+
             // inserirla nel db e update tabella room (la resevation è già collegata al cliente)
-            var x = _bookingService.BookNewReservation(reservation); // fare il controllo che la stanza non sia occupata
-            Console.WriteLine( x);
+            _bookingService.BookNewReservation(reservation); 
+            Console.WriteLine("OCCUPO STANZA");
+            var room2 = _roomService.GetRoomsWithFilter(filter2);
+            room2.Data.ForEach(x => Console.WriteLine(x));
+            _roomUpdateService.AutoRoomsUpdating();
+            Console.WriteLine("AUTO REFRESH STANZA");
+            var room3 = _roomService.GetRoomsWithFilter(filter2);
+            room3.Data.ForEach(x => Console.WriteLine(x));
 
             // ottenre reservation del cliente
             Console.WriteLine("PRENOTAZIONE DEL CLIENTE: ");
@@ -94,6 +105,7 @@ namespace ConsoleApp
             reservationsBooked.Room = room;
             reservationsBooked.Client = client;
             Console.WriteLine(reservationsBooked.ToString());
+
         }
     }
 }

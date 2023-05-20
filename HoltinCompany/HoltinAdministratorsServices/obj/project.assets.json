@@ -545,9 +545,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HoltinAdministratorsServices.csproj",
-      "projectName": "HoltinAdministratorsServices",
-      "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HoltinAdministratorsServices.csproj",
+      "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HiltonDataUpdateServices.csproj",
+      "projectName": "HiltonDataUpdateServices",
+      "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\HiltonDataUpdateServices.csproj",
       "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAdministratorsServices\\obj\\",
       "projectStyle": "PackageReference",

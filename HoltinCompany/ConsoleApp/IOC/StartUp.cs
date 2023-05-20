@@ -28,6 +28,7 @@ using Validators.EmailValidator;
 using Validators.PasswordValidator;
 using HoltinServices.SignupService;
 using HoltinServices.LogInService;
+using HoltinAdministratorsServices.AdministratorServicesOnRoom;
 
 namespace ConsoleApp.IOC
 {
@@ -44,7 +45,6 @@ namespace ConsoleApp.IOC
                     var appSettings = JsonConvert.DeserializeObject<AppSettings>(json);
                     service.AddSingleton(appSettings);
 
-                    // persistence
                     var databaseOption = new DatabaseOption(appSettings.ConnectionStrings.MyConnectionString);
                     service.AddSingleton<IHotelRepository>(new HotelRepository(databaseOption));
                     service.AddSingleton<IRoomRepository>(new RoomRepository(databaseOption));
@@ -56,12 +56,11 @@ namespace ConsoleApp.IOC
                     service.AddSingleton<IClientPersistenceService, ClientPersistenceService>();
                     service.AddSingleton<IReservationPersistenceService, ReservationPersistenceService>();
 
-                    // business logic
                     var discountCalculator = new SetDiscountCalculator(appSettings.DiscountPolicies).GetCalculator();
                     service.AddSingleton(new ReservationPriceCalculator(discountCalculator));
 
                     service.AddSingleton<IEmailValidator>(new EmailValidator(appSettings.EmailPattern));
-                    service.AddSingleton<IPasswordValidator>(SetUpPasswordChain.SetUpChain());
+                    service.AddSingleton(SetUpPasswordChain.SetUpChain());
 
                     service.AddSingleton<IHotelService, HotelService>();
                     service.AddSingleton<IRoomService, RoomService>();
@@ -70,6 +69,7 @@ namespace ConsoleApp.IOC
                     service.AddSingleton<IBookingService, BookingServices>();
                     service.AddSingleton<ISignupService, SignupService>();
                     service.AddSingleton<ILoginService, LoginService>();
+                    service.AddSingleton<IRoomUpdateService, RoomUpdateService>();
                 });
         }
 

@@ -14,6 +14,7 @@ namespace HoltinData.QueriesBuilders
 
         private const string WhereHotelId = $"HotelId = {HotelIdParameterName}";
         private const string WhereGuests = $"Room.DoubleBeds * 2 + Room.SingleBeds >= {GuestsParameterName}";
+        private const string WhereBooked = $"Booked = {BookedParameterName}";
         private const string WhereSingleBeds = $"SingleBeds = {SingleBedsParameterName}";
         private const string WhereDoubleBeds = $"DoubleBeds = {DoubleBedsParameterName}";
         private const string WhereWiFi = $"WiFi = {WifiParametrName}";
@@ -25,6 +26,7 @@ namespace HoltinData.QueriesBuilders
 
         private const string HotelIdParameterName = "@id";
         private const string GuestsParameterName = "@guests";
+        private const string BookedParameterName = "@booked";
         private const string SingleBedsParameterName = "@singleBeds";
         private const string DoubleBedsParameterName = "@doubleBeds";
         private const string WifiParametrName = "@wifi";
@@ -66,6 +68,17 @@ namespace HoltinData.QueriesBuilders
             }
             Wheres.Add(WhereGuests);
             QueryParameters.Add(GuestsParameterName, guests);
+            return this;
+        }
+
+        public RoomQueryBuilder WithBooked(bool booked)
+        {
+            if (!booked)
+            {
+                Wheres.Add(WhereBooked);
+                QueryParameters.Add(BookedParameterName, booked);
+                return this;
+            }
             return this;
         }
 

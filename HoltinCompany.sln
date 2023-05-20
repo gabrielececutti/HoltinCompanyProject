@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinAutentication", "Holt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinData", "HoltinCompany\HoltinData\HoltinData.csproj", "{CB6A2D19-BB27-4B8F-8151-4DF4357318CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoltinAdministratorsServices", "HoltinCompany\HoltinAdministratorsServices\HoltinAdministratorsServices.csproj", "{0D146D44-E2D1-473B-9770-5795F2443077}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiltonDataUpdateServices", "HoltinCompany\HoltinAdministratorsServices\HiltonDataUpdateServices.csproj", "{0D146D44-E2D1-473B-9770-5795F2443077}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

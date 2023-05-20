@@ -12,7 +12,7 @@ namespace HoltinServices.Helpers
 {
     public class ReservationPriceCalculator
     {
-        private const decimal PercentageRoomPriceGuest = 0.010M;
+        private const decimal PercentageRoomPriceGuest = 0.10M;
         private readonly DiscountCalculator _discountCalculator;
 
         public ReservationPriceCalculator(DiscountCalculator discountCalculator)

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HoltinAdministratorsServices\HoltinAdministratorsServices.csproj" />
+    <ProjectReference Include="..\HoltinAdministratorsServices\HiltonDataUpdateServices.csproj" />
     <ProjectReference Include="..\HoltinAutentication\HoltinAutentication.csproj" />
     <ProjectReference Include="..\HoltinData\HoltinData.csproj" />
     <ProjectReference Include="..\HoltinModels\HoltinModels.csproj" />

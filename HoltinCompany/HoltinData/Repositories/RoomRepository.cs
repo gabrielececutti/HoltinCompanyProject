@@ -35,6 +35,7 @@ namespace HoltinData.Repositories
                 .Create()
                 .WithHotelId (filter.HotelId)
                 .WithGuests (filter.Guests)
+                .WithBooked(filter.Booked)
                 .WithSingleBeds (filter.SingleBeds)
                 .WithDoubleBeds (filter.DoubleBeds)
                 .WithWiFi (filter.WiFi)
