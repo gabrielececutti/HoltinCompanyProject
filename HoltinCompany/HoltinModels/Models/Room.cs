@@ -23,7 +23,7 @@ namespace HoltinModels.Entities
 
         public override string ToString()
         {
-            return $"Hotel: {Hotel}, Number: {Number}, Booked: {Booked}, SingleBeds: {SingleBeds}, DoubleBeds: {DoubleBeds}, WiFi: {WiFi}, RoomService: {RoomService}, AirConditioning: {AirConditioning}, Tv: {Tv}, NightPrice: {NightPrice}";
+            return $"Id: {Id}, Hotel: {Hotel}, Number: {Number}, Booked: {Booked}, SingleBeds: {SingleBeds}, DoubleBeds: {DoubleBeds}, WiFi: {WiFi}, RoomService: {RoomService}, AirConditioning: {AirConditioning}, Tv: {Tv}, NightPrice: {NightPrice}";
         }
     }
 }

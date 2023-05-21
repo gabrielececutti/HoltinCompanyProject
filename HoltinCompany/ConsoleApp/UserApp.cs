@@ -79,7 +79,7 @@ namespace ConsoleApp
                 Hotel = _hotelService.GetHotelById( new HotelByIdRequest { Id = room.HotelId }).Data,
                 Room = room,
                 CheckIn = new DateTime(2023, 5, 10),
-                CheckOut = new DateTime(2023, 5, 26),
+                CheckOut = new DateTime(2023, 5, 25),
                 Guest = 10
             };
             var reservation = _reservationService.CreateNewReservation(userRequest);
@@ -88,15 +88,10 @@ namespace ConsoleApp
 
             var filter2 = new RoomByFilterRequest() { WiFi = true, NigthPriceMax = 101, SingleBeds = 1, DoubleBeds = 1, Booked = true };
 
-            // inserirla nel db e update tabella room (la resevation è già collegata al cliente)
+            // inserirla nel db e update tabella room (la resevation è già collegata al cliente) fare controllo disponibilità
             _bookingService.BookNewReservation(reservation); 
-            Console.WriteLine("OCCUPO STANZA");
-            var room2 = _roomService.GetRoomsWithFilter(filter2);
-            room2.Data.ForEach(x => Console.WriteLine(x));
-            _roomUpdateService.AutoRoomsUpdating();
-            Console.WriteLine("AUTO REFRESH STANZA");
-            var room3 = _roomService.GetRoomsWithFilter(filter2);
-            room3.Data.ForEach(x => Console.WriteLine(x));
+
+            _roomUpdateService.UpdateRoomAvailability();
 
             // ottenre reservation del cliente
             Console.WriteLine("PRENOTAZIONE DEL CLIENTE: ");
@@ -105,7 +100,6 @@ namespace ConsoleApp
             reservationsBooked.Room = room;
             reservationsBooked.Client = client;
             Console.WriteLine(reservationsBooked.ToString());
-
         }
     }
 }

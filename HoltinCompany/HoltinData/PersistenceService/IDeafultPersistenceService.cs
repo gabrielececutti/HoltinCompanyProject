@@ -43,6 +43,7 @@ namespace HoltinData.PersistenceService
     {
         public DefaultResponse<Room> GetRoomById(RoomByIdRequest id);
         public DefaultResponse<List<Room>> GetRoomsByFilter(RoomByFilterRequest request);
+        public DefaultResponse<List<Room>> GetAllRooms();
         public DefaultResponse<bool> Insert(Room room);
         public DefaultResponse<bool> Update(Room room);
         public DefaultResponse<bool> Delete(RoomByIdRequest id);

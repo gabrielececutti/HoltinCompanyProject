@@ -24,6 +24,11 @@ namespace HoltinData.PersistenceService
             return _roomRepository.GetRoomsByFilter(request);
         }
 
+        public DefaultResponse<List<Room>> GetAllRooms()
+        {
+            return _roomRepository.GetAllRooms();
+        }
+
         public DefaultResponse<Room> GetRoomById(RoomByIdRequest id)
         {
             return _roomRepository.GetRoomById(id);

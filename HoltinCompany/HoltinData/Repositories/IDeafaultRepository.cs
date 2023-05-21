@@ -22,6 +22,7 @@ namespace HoltinRepositories
     {
         public DefaultResponse<Room> GetRoomById(RoomByIdRequest id);
         public DefaultResponse<List<Room>> GetRoomsByFilter(RoomByFilterRequest filter);
+        public DefaultResponse<List<Room>> GetAllRooms();
         public DefaultResponse<bool> Insert (Room room);
         public DefaultResponse<bool> Update (Room room);
         public DefaultResponse<bool> Delete (RoomByIdRequest id);

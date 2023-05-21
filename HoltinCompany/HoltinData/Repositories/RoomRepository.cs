@@ -29,6 +29,17 @@ namespace HoltinData.Repositories
             };
         }
 
+        public DefaultResponse<List<Room>> GetAllRooms()
+        {
+            var query = "SELECT * FROM Room";
+            var result = GetRooms(query, new Dictionary<string, object>());
+            return new DefaultResponse<List<Room>>
+            {
+                Data = result.Data,
+                Errors = result.Errors
+            };
+        }
+
         public DefaultResponse<List<Room>> GetRoomsByFilter(RoomByFilterRequest filter)
         {
             var result = RoomQueryBuilder

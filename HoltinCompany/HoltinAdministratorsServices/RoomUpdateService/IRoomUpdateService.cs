@@ -12,7 +12,7 @@ namespace HoltinAdministratorsServices.AdministratorServicesOnRoom
     {
         public void Insert(Room room);
         public void Update(Room room);
-        public void AutoRoomsUpdating();
+        public void UpdateRoomAvailability();
         public void Delete(RoomByIdRequest id);
     }
 }

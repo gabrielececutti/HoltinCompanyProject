@@ -9,6 +9,6 @@ namespace HoltinServices.ClientService
 {
     public interface IBookingService
     {
-        public bool BookNewReservation(Reservation reservation);
+        public void BookNewReservation(Reservation reservation);
     }
 }

@@ -21,20 +21,16 @@ namespace HoltinAdministratorsServices.AdministratorServicesOnRoom
             _reservationPersistenceService = reservationPersistenceService;
         }
 
-        public void AutoRoomsUpdating()
+        public void UpdateRoomAvailability()
         {
             var now = DateTime.Now;
-            var roomsBooked = _roomPersistenceService.GetRoomsByFilter(new RoomByFilterRequest { Booked = true }).Data;
+            var roomsBooked = _roomPersistenceService.GetAllRooms().Data;
             foreach (var room in roomsBooked)
             {
-                var reservationsToCheck = _reservationPersistenceService.GetReservationsByFilter(new ReservationByFilterRequest { RoomId = room.Id });
-
-                foreach (var reservation in reservationsToCheck.Data.Where(r => r.CheckOut < now)) // se ordinate basterebbe controllare solo l'ultima
-                {
-                    room.Booked = false;
-                    _roomPersistenceService.Update(room);
-                    if (room.Number == 50) Console.WriteLine("HELOOOOOOOOOOOOOOOO");
-                }
+                var reservtionToCheck = _reservationPersistenceService.GetReservationsByFilter(new ReservationByFilterRequest { RoomId = room.Id }).Data;
+                if (reservtionToCheck.Any ( r => now <= r.CheckOut && now >= r.CheckIn)) room.Booked = true;
+                else room.Booked = false;
+                _roomPersistenceService.Update(room);
             }
         }
 
