@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Xl93g5CvqvX55F1+fNl6HYBnt/03ypDdHaCex0Gq0QYoqyVzUuo/GntnPDVS59HuZwEWy8nTWJHgq5piAGu6jQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Academy C#NET\\ProgettiPersonali\\HoltinCompanyBackEnd\\HoltinCompany\\HoltinAutentication\\HoltinAutentication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

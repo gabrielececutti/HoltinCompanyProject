@@ -1,0 +1,17 @@
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\bin\Debug\net6.0\HiltonDataUpdateServices.deps.json
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\bin\Debug\net6.0\HiltonDataUpdateServices.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\bin\Debug\net6.0\HiltonDataUpdateServices.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\bin\Debug\net6.0\HoltinData.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\bin\Debug\net6.0\HoltinModels.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\bin\Debug\net6.0\HoltinData.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\bin\Debug\net6.0\HoltinModels.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HiltonDataUpdateServices.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HiltonDataUpdateServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HiltonDataUpdateServices.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HiltonDataUpdateServices.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HiltonDataUpdateServices.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HiltonDataUpdateServices.csproj.CopyComplete
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HiltonDataUpdateServices.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\refint\HiltonDataUpdateServices.dll
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\HiltonDataUpdateServices.pdb
+C:\Users\gabri\OneDrive\Desktop\Academy C#NET\ProgettiPersonali\HoltinCompanyBackEnd\HoltinCompany\HoltinAdministratorsServices\obj\Debug\net6.0\ref\HiltonDataUpdateServices.dll

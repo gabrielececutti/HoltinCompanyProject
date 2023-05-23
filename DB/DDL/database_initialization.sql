@@ -31,12 +31,13 @@ TableSeats int not null check (TableSeats>0)
 
 create table Client ( 
 Id int identity (1,1) primary key,
-[Name] varchar(50) not null,
-Surname varchar(50) not null,
+[Name] nvarchar(50) not null,
+Surname nvarchar(50) not null,
 BirthDate Date not null,
-TaxIdCode varchar(16),
-PhoneNumber varchar(15)not null,
-Email varchar(50),
+TaxIdCode nvarchar(16),
+PhoneNumber nvarchar(25)not null,
+Email nvarchar(50) not null,
+Password nvarchar(50) not null,
 Fidelity bit default 0,
 )
 
