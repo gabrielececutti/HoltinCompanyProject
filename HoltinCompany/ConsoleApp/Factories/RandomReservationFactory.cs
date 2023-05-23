@@ -24,28 +24,16 @@ namespace HoltinModels.Factories
             _roomMaxId = roomIdMax;
         }
 
-        /// <summary>
-        /// Returns a new reservation from a new client
-        /// </summary>
-        /// <returns></returns>
         public Reservation Create ()
         {
-            // select a generic room of a hotel
             var room = GetRandomRoom();
-
-            // create a new client
             var client = _randomClientFactory.Create();
-
-            // create two random dates for checkIn and checkOut
             var dates = GetGenericDates();
             var checkIn = dates.Item1;
             var checkOut = dates.Item2;
-
-            // calculate the price of the room
             var diff = Math.Abs((checkOut - checkIn).TotalDays);
             var roomPrice = room.NightPrice * (decimal)diff;
 
-            // create the new reservation
             var reservation = _faker
                         .RuleFor(c => c.Id, f => f.IndexFaker)
                         .RuleFor(c => c.HotelId, f => room.HotelId) 
@@ -60,26 +48,15 @@ namespace HoltinModels.Factories
             return reservation;
         }
 
-        /// <summary>
-        /// Returns a new reservation from an existing client
-        /// </summary>
-        /// <param name="client"></param>
-        /// <returns></returns>
         public Reservation Create (Client client)
         {
-            // select a generic room of a hotel
             var room = GetRandomRoom();
-
-            // create two random dates for checkIn and checkOut
             var dates = GetGenericDates();
             var checkIn = dates.Item1;
             var checkOut = dates.Item2;
-
-            // calculate the price of the room
             var diff = Math.Abs((checkOut - checkIn).TotalDays);
             var roomPrice = room.NightPrice * (decimal)diff;
 
-            // create the new reservation
             var reservation = _faker
                         .RuleFor(c => c.Id, f => f.IndexFaker)
                         .RuleFor(c => c.HotelId, f => room.HotelId)
@@ -94,7 +71,6 @@ namespace HoltinModels.Factories
             return reservation;
         }
 
-        // returns a random Room from a Hotel
         private  Room GetRandomRoom ()
         {
             int n = _random.Next(1, _roomMaxId);
@@ -102,7 +78,6 @@ namespace HoltinModels.Factories
             return _roomRepository.GetRoomById(randomId).Data;
         }
 
-        // returns two generic dates with a difference <=20
         private (DateTime, DateTime) GetGenericDates ()
         {
             var faker = new Faker();

@@ -34,7 +34,6 @@ namespace ConsoleApp.IOC
 {
     public static class StartUp
     {
-
         public static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()

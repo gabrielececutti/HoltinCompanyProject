@@ -9,10 +9,6 @@ namespace HoltinData
     public class DatabaseOption
     {
         public string ConnectionString { get;  private set; }
-
-        public DatabaseOption (string connectionString)
-        {
-            ConnectionString = connectionString;
-        }
+        public DatabaseOption (string connectionString) => ConnectionString = connectionString;
     }
 }

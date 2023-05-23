@@ -23,7 +23,7 @@ namespace HoltinData.Repositories
             var response = GetClients(query, parameter);
             return new DefaultResponse<Client>
             {
-                Data = response.Data.FirstOrDefault(), // creo un oggetto inutile
+                Data = response.Data.FirstOrDefault(), 
                 Errors = response.Errors
             };
         }
