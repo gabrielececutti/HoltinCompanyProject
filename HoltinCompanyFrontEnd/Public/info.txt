@@ -1,0 +1,1 @@
+Contiene i file statici del tuo sito web, come l'index.html principale, le immagini, i font, ecc.

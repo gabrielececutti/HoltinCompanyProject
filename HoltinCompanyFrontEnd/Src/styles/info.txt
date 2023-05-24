@@ -1,0 +1,1 @@
+Contiene i file di stile (CSS, Sass, Less) per il tuo sito web. Puoi organizzare i file di stile in sottocartelle in base alla loro funzionalità o area di applicazione.

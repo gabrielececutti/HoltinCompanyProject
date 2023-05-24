@@ -1,0 +1,1 @@
+Contiene file di utilità che possono essere utilizzati da diverse parti del tuo frontend. Ad esempio, potresti avere funzioni di utilità per la manipolazione dei dati, la formattazione delle date, la gestione delle richieste HTTP, ecc.

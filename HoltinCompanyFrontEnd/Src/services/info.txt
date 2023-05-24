@@ -1,0 +1,1 @@
+ Contiene i servizi che gestiscono la comunicazione con le Web API del backend o altre operazioni lato client.
